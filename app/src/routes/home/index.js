@@ -2,11 +2,12 @@
 const express=require('express');
 const router=express.Router();
 
-const ctr=require('./home.ctrl');
+const ctrl=require('./home.ctrl');
 
-router.get("/", ctr.home);
+router.get("/", ctrl.output.home);
 
-router.get("/login",ctr.login);
+router.get("/login",ctrl.output.login);
+router.post("/login",ctrl.process.login);
 
 
 module.exports =router;
